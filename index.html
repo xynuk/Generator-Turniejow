@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Turniejów Piłkarskich</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-trophy"></i> Generator Turniejów Piłkarskich</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="setup-panel">
+                <h2>Konfiguracja turnieju</h2>
+                
+                <div class="form-group">
+                    <label for="tournament-name">Nazwa turnieju:</label>
+                    <input type="text" id="tournament-name" placeholder="np. Mistrzostwa Ligi 2023">
+                </div>
+                
+                <div class="form-group">
+                    <label for="team-count">Liczba drużyn:</label>
+                    <select id="team-count">
+                        <option value="4">4</option>
+                        <option value="8" selected>8</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tournament-type">Typ turnieju:</label>
+                    <select id="tournament-type">
+                        <option value="groups+playoffs">Faza grupowa + play-off</option>
+                        <option value="playoffs">System pucharowy</option>
+                        <option value="league">System ligowy (każdy z każdym)</option>
+                    </select>
+                </div>
+                
+                <div id="teams-container">
+                    <h3>Dodaj drużyny:</h3>
+                    <div id="teams-list">
+                        <!-- Drużyny będą dodawane dynamicznie -->
+                    </div>
+                    <button id="random-teams" class="btn"><i class="fas fa-random"></i> Losuj drużyny</button>
+                </div>
+                
+                <button id="generate-tournament" class="btn primary"><i class="fas fa-cogs"></i> Generuj turniej</button>
+            </div>
+            
+            <div class="tournament-view" id="tournament-view">
+                <div class="empty-state">
+                    <i class="fas fa-futbol"></i>
+                    <p>Skonfiguruj i wygeneruj swój turniej</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

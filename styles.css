@@ -1,0 +1,256 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h1 i {
+    color: var(--warning-color);
+    margin-right: 10px;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+}
+
+.setup-panel {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tournament-view {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 500px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+}
+
+.empty-state i {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+h2, h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--light-color);
+    color: var(--dark-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+.btn.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn.primary:hover {
+    background: var(--secondary-color);
+}
+
+#teams-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.team-input {
+    display: flex;
+    align-items: center;
+}
+
+.team-input input {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.team-input .team-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+/* Tournament view styles */
+.tournament-bracket {
+    display: flex;
+    flex-direction: column;
+}
+
+.tournament-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-color);
+}
+
+.tournament-title {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+}
+
+.round {
+    margin-bottom: 30px;
+}
+
+.round-title {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.match {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.match-team {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.match-team:first-child {
+    border-bottom: 1px solid #eee;
+}
+
+.match-score {
+    width: 30px;
+    text-align: center;
+}
+
+.group-stage {
+    margin-bottom: 30px;
+}
+
+.group {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.group-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.standings {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.standings th, .standings td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.standings th {
+    background: var(--light-color);
+    color: var(--dark-color);
+}
+
+.standings tr:hover {
+    background: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    #teams-list {
+        grid-template-columns: 1fr;
+    }
+}
